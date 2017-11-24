@@ -395,5 +395,16 @@ def main():
     print("      Det er VIKTIG å merke overføringen med ditt navn!")
     print("      Nåværende månedlig beløp er kr 500")
 
+    verbose = False
+    if verbose:
+        # Print all transactions: Good to double-check that we don't parse
+        # movements to wrong persons!
+        print("")
+        for k, v in sorted(grouped.items()):
+            print("=== %s ===" % k)
+            for i in v:
+                print(i)
+            print("")
+
 if __name__ == "__main__":
     main()
