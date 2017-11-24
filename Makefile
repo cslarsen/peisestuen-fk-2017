@@ -1,3 +1,3 @@
 run:
-	dos2unix export.csv
-	PYTHONPATH=. ./fk.py export.csv
+	@dos2unix -q export.csv
+	@PYTHONPATH=. ./fk.py export.csv

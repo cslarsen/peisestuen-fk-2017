@@ -181,6 +181,7 @@ COSTS = {
         NOK("0.00"), # Bratislava
         NOK("-1949.48"), # London
         NOK("0.00"), # Aberdeen
+        NOK("-0.28"), # For avbalansering Christian/Andre
     ],
 
     # Gebyr
@@ -203,7 +204,7 @@ person_regex = {
     "Jarle":     [".*Jarle.*"],
     "Jørgen":    [".*J.rgen Helland.*"],
     "Marius":    [".*Wolla.*", ".*Marius.*"],
-    "Morten":    [".*Morten Haugeland.*"],
+    "Morten":    [".*Morten .*"], # KEEP SPACE!
     "Rolf":      [".*Rolf.*"],
     "RuneAa":    [".*Aanestad.*"],
     "RuneB":     [".*Brevik.*"],
@@ -380,6 +381,8 @@ def main():
 
     banner("Individuelle Balanser")
     for name, amount in sorted(balance.items()):
+        if round_nok(amount) == 0:
+            continue
         print("%-9s kr %9s" % (name, round_nok(amount)))
     print("%-9s kr %9s" % ("Sum", round_nok(sum(balance.values()))))
 
