@@ -74,14 +74,15 @@ TRIPS = [
          to="Haarlem", by="Glenn og Morten",
          on=date(2016, 10, 28), days=2, settled=date(2017, 1, 22)),
 
-    Trip(alias="Tur 2017",
+    Trip(alias="Tur 2018",
          to="Unknown", by="André og Øystein",
-         on=date(2017, 12, 31), days=2, settled=date(2017, 12, 31)),
+         on=date(2018, 12, 30), days=2, settled=date(2018, 12, 30)),
 ]
 
 # Price per person, use this to get an accurate amount
 PRICE_STOCKHOLM  = NOK("-37921.00") / 8
 PRICE_BRATISLAVA = NOK("-59799.00") / 9
+PRICE_TUR2018 = NOK("-26146.00") / 7
 
 # Tactic: Total cost, minus special circumstances, then divide the rest equally
 # among the remaining travellers
@@ -109,6 +110,7 @@ COSTS = {
         PRICE_LONDON,
         PRICE_ABERDEEN,
         PRICE_HAARLEM,
+        PRICE_TUR2018,
     ],
 
     "Christian": [
@@ -117,6 +119,7 @@ COSTS = {
         PRICE_LONDON,
         PRICE_ABERDEEN,
         PRICE_HAARLEM,
+        PRICE_TUR2018,
     ],
 
     "Dagfinn": [
@@ -125,6 +128,7 @@ COSTS = {
         PRICE_LONDON,
         PRICE_ABERDEEN,
         PRICE_HAARLEM,
+        PRICE_TUR2018,
     ],
 
     "Einar": [
@@ -134,6 +138,7 @@ COSTS = {
         PRICE_LONDON,
         PRICE_ABERDEEN,
         PRICE_HAARLEM,
+        PRICE_TUR2018,
     ],
 
     "Glenn": [
@@ -157,6 +162,7 @@ COSTS = {
         PRICE_LONDON,
         PRICE_ABERDEEN,
         PRICE_HAARLEM,
+        PRICE_TUR2018,
     ],
 
     "Rolf": [
@@ -165,6 +171,7 @@ COSTS = {
         PRICE_LONDON,
         PRICE_ABERDEEN,
         PRICE_HAARLEM,
+        PRICE_TUR2018,
     ],
 
     "Øystein": [
@@ -173,6 +180,7 @@ COSTS = {
         PRICE_LONDON,
         NOK("-3186.00"), # Aberdeen, var ikke med, måtte betale en del
         PRICE_HAARLEM,
+        PRICE_TUR2018,
     ],
 
     # Earned interest that we decided to spend on a trip
@@ -220,6 +228,7 @@ other_regex = {
     "Tur 2016": [".*Reise2016.*",
                  "3250\.22\.52800, Glenn Stange", # overføring 16/11-16 feilnotert
                  ],
+    "Tur 2018": [".*Tur 2018.*"],
     "(Renter)":  [".*Kreditrente.*"],
     "(Gebyr)":   [".*Gebyr.*"],
 }
